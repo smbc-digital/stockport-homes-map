@@ -244,6 +244,25 @@ const Configuration = {
         },
 
         {
+            key: 'Streetlights',
+            url:'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highways:street_lights&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+              maxZoom: 16,
+              pointToLayer: (feature, latlng) => {
+                return Leaflet.circleMarker(latlng, {
+                  radius: 8,
+                  fillColor: '#15863a',
+                  color: '#000',
+                  weight: 1,
+                  fillOpacity: 1
+                })
+              }
+            },
+            displayOverlay: true,
+                visibleByDefault: false
+            },
+            
+        {
             key: 'os1250_line',
             url: 'https://spatial.stockport.gov.uk/geoserver/wms?',
             layerOptions: {
