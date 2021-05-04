@@ -1,5 +1,5 @@
-import { prowPopup,tpoPopup,Land_Ownership_Popup, grittingroutesPopup } from './Popups'
-import { prowStyle, tpoStyle, proposedtpoStyle, revokedtpoStyle, LandOwnershipstyle, adopted_highwaysStyle, grittingroutesStyle } from './Styles'
+import { prowPopup,tpoPopup,Land_Ownership_Popup } from './Popups'
+import { prowStyle, tpoStyle, proposedtpoStyle, revokedtpoStyle, LandOwnershipstyle, adopted_highwaysStyle } from './Styles'
 
 const Configuration = {
     Map: {
@@ -81,18 +81,6 @@ const Configuration = {
                 onEachFeature: tpoPopup,
                 maxZoom: 16,
                 style: revokedtpoStyle
-            },
-            displayOverlay: true,
-            visibleByDefault: false
-        },
-
-        {
-            key: 'Gritting Routes',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=highway_assets:gritting_routes&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
-            layerOptions: {
-                onEachFeature: grittingroutesPopup,
-                maxZoom: 16,
-                style: grittingroutesStyle
             },
             displayOverlay: true,
             visibleByDefault: false

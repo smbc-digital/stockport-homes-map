@@ -48,26 +48,9 @@ const prowPopup = (feature, layer) => {
   layer.bindPopup(content)
  }
 
- const grittingroutesPopup = (feature, layer) => {
-  
-  const content = `<div class="smbc-map__item">
-  <div class="smbc-map__item__header__block">
-    <i class="fa fa-road smbc-map__item__header__block__icon" aria-hidden="true"></i>
-    <span class="smbc-map__item__header__block__title">Gritting Routes</span>
-  </div>
-  <div class="smbc-map__item__body">
-    <p>Route Type: ${feature.properties.classification}</p>
-    <p>Route No: ${feature.properties.route}</p>
-    <p>Route Description: ${feature.properties.name}</p>
-  </div>
-</div>`
- 
-  layer.bindPopup(content)
- } 
 
  export {
   prowPopup,
   tpoPopup,
-  Land_Ownership_Popup,
-  grittingroutesPopup
+  Land_Ownership_Popup
 }
