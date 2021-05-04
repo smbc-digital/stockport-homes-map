@@ -204,6 +204,41 @@ const Historic_Parks_Gardens_Popup = (feature, layer) => {
   layer.bindPopup(content)
 }
 
+const planningappsPopup = (feature, layer) => {
+  
+  const content = `<div class="smbc-map__item">
+  <div class="smbc-map__item__header__block">
+    <i class="fa fa-building smbc-map__item__header__block__icon" aria-hidden="true"></i>
+    <span class="smbc-map__item__header__block__title">Planning Applications</span>
+  </div>
+  <div class="smbc-map__item__body">
+    <p>Planning Application No.: ${feature.properties.refval}</p>
+    <p>Address: ${feature.properties.address}</p>
+    <p>App Type: ${feature.properties.application_type}</p>
+    <p>Proposal: ${feature.properties.proposal}</p>
+    <p>Decision: ${feature.properties.decision}</p>
+    <p>Decision Date: ${feature.properties.decision_date}</p>
+  </div>
+</div>`
+ 
+  layer.bindPopup(content)
+ }
+
+ const section38Popup = (feature, layer) => {
+  
+  const content = `<div class="smbc-map__item">
+  <div class="smbc-map__item__header__block">
+    <i class="fa fa-list smbc-map__item__header__block__icon" aria-hidden="true"></i>
+    <span class="smbc-map__item__header__block__title">Section 38 Agreements</span>
+  </div>
+  <div class="smbc-map__item__body">
+  <p>Description: ${feature.properties.description}</p>
+  </div>
+</div>`
+  
+  layer.bindPopup(content)
+  }  
+
 
  export {
   prowPopup,
@@ -219,5 +254,7 @@ const Historic_Parks_Gardens_Popup = (feature, layer) => {
   Article4_1_direction_Popup,
   Article4_2_direction_Popup,
   Scheduled_monument_Popup,
-  Historic_Parks_Gardens_Popup
+  Historic_Parks_Gardens_Popup,
+  planningappsPopup,
+  section38Popup
 }

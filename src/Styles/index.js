@@ -144,8 +144,20 @@ opacity: 1,
 fillColor: '#33a02c',
 fillOpacity: 0.5
 }
-
-
+const planningappsStyle = {
+    color: '#e31a1c',
+    weight: 4,
+    opacity: 1,
+    fillColor: '#e31a1c',
+    fillOpacity: 0.25
+}
+const section38Style = {
+    color: '#fed976',
+    weight: 2,
+    opacity: 1,
+    fillColor: '#fed976',
+    fillOpacity: 0.25,
+}
 
 export {
 tpoStyle,
@@ -164,5 +176,7 @@ Conservation_area_style,
 Article4_1_direction_style,
 Article4_2_direction_style,
 Scheduled_monument_style,
-Historic_parks_gardens_style
+Historic_parks_gardens_style,
+planningappsStyle,
+section38Style
 }
