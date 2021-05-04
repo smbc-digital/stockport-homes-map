@@ -67,6 +67,84 @@ const adopted_highwaysStyle = {
     fillColor: '#ce1256',
     fillOpacity: 0.25
 }
+const Leasesstyle = {
+    color: '#006400',
+    weight: 2,
+    opacity: 1,
+    fillColor: '#006400',
+    fillOpacity: 0
+}
+const Assetsstyle = {
+    color: '#006400',
+    weight: 2,
+    opacity: 1,
+    fillColor: '#006400',
+    fillOpacity: 0
+}
+const greenbeltStyle = {
+    color: '#b3de69',
+    weight: 2,
+    opacity: 0,
+    fillColor: '#b3de69',
+    fillOpacity: 0.25
+}
+const aqmaStyle = {
+    color: '#6a3d9a',
+    weight: 2,
+    opacity: 0.25,
+    fillColor: '#6a3d9a',
+    fillOpacity: 0.25
+}
+const Locally_listed_style = {
+    color: '#fb9a99',
+    weight: 2,
+    opacity: 1,
+    fillColor: '#fb9a99',
+    fillOpacity: 0.5
+}
+const Statutory_listed_style = {
+color: '#3288bd',
+weight: 2,
+opacity: 1,
+fillColor: '#3288bd',
+fillOpacity: 0.5
+}
+const Conservation_area_style = {
+color: '#e31a1c',
+weight: 4,
+opacity: 1,
+fillColor: '#e31a1c',
+fillOpacity: 0
+}
+const Article4_1_direction_style = {
+color: '#cab2d6',
+weight: 2,
+opacity: 1,
+fillColor: '#cab2d6',
+fillOpacity: 0.5
+}
+const Article4_2_direction_style = {
+color: '#ffff99',
+weight: 2,
+opacity: 1,
+fillColor: '#ffff99',
+fillOpacity: 0.5
+}
+const Scheduled_monument_style = {
+color: '#b15928',
+weight: 2,
+opacity: 1,
+fillColor: '#b15928',
+fillOpacity: 0.5
+}
+const Historic_parks_gardens_style = {
+color: '#33a02c',
+weight: 2,
+opacity: 1,
+fillColor: '#33a02c',
+fillOpacity: 0.5
+}
+
 
 
 export {
@@ -75,5 +153,16 @@ proposedtpoStyle,
 revokedtpoStyle,    
 prowStyle,
 LandOwnershipstyle,
-adopted_highwaysStyle
+adopted_highwaysStyle,
+Leasesstyle,
+Assetsstyle,
+greenbeltStyle,
+aqmaStyle,
+Locally_listed_style,
+Statutory_listed_style,
+Conservation_area_style,
+Article4_1_direction_style,
+Article4_2_direction_style,
+Scheduled_monument_style,
+Historic_parks_gardens_style
 }
