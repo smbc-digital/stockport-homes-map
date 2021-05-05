@@ -239,6 +239,24 @@ const planningappsPopup = (feature, layer) => {
   layer.bindPopup(content)
   }  
 
+ const streetlightPopup = (feature, layer) => {
+  
+  const content = `<div class="smbc-map__item">
+  <div class="smbc-map__item__header__block">
+    <i class="fa fa-lightbulb-o smbc-map__item__header__block__icon" aria-hidden="true"></i>
+    <span class="smbc-map__item__header__block__title">Streetlight</span>
+  </div>
+  <div class="smbc-map__item__body">
+  <p>ID: ${feature.properties.central_asset_id}</p>
+  <p>Type: ${feature.properties.feature_type_name}</p>
+  <p>Location: ${feature.properties.location_description}</p>
+  </div>
+</div>`
+  
+  layer.bindPopup(content)
+  }  
+
+  
 
  export {
   prowPopup,
@@ -256,5 +274,6 @@ const planningappsPopup = (feature, layer) => {
   Scheduled_monument_Popup,
   Historic_Parks_Gardens_Popup,
   planningappsPopup,
-  section38Popup
+  section38Popup,
+  streetlightPopup
 }
