@@ -69,7 +69,7 @@ const adopted_highwaysStyle = {
 }
 const Leasesstyle = {
     color: '#006400',
-    weight: 2,
+    weight: 4,
     opacity: 1,
     fillColor: '#006400',
     fillOpacity: 0

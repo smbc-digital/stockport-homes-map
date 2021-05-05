@@ -16,29 +16,38 @@ const Configuration = {
     },
     DynamicData: 
     [
-        
         {
-            key: 'Leases',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:leases&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            key: 'Adopted Highways',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=con29:2_1a&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
-                onEachFeature: Leases_Popup,
-                maxZoom: 16,
-                style: Leasesstyle
+                style: adopted_highwaysStyle,
+                maxZoom: 14
             },
             displayOverlay: true,
-            visibleByDefault: false
-        },       
+            visibleByDefault: true
+        },
         {
             key: 'Council Owned Land',
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:council_owned_land&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
                 onEachFeature: Land_Ownership_Popup,
-                maxZoom: 16,
+                maxZoom: 14,
                 style: LandOwnershipstyle
             },
             displayOverlay: true,
-            visibleByDefault: false
+            visibleByDefault: true
         },
+        {
+            key: 'Leases',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:leases&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                onEachFeature: Leases_Popup,
+                maxZoom: 14,
+                style: Leasesstyle
+            },
+            displayOverlay: true,
+            visibleByDefault: true
+        },       
         {
             key: 'Council Owned Buildings',
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:smbc_buildings&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
