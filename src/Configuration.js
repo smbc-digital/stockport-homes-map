@@ -16,6 +16,7 @@ const Configuration = {
     },
     DynamicData: 
     [
+        
         {
             key: 'Leases',
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:leases&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
@@ -286,6 +287,19 @@ const Configuration = {
                 transparent: true
             },
             displayOverlay: false,
+            visibleByDefault: true 
+        },
+        {
+            key: 'Streetlight Bulb',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wms?',
+            layerOptions: {
+                maxZoom: 20,
+                minZoom: 17,
+                layers: 'highways:street_lights',
+                format: 'image/png',
+                transparent: true
+            },
+            displayOverlay: true,
             visibleByDefault: true 
         }
     ],
