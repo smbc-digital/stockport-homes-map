@@ -55,7 +55,11 @@ const prowPopup = (feature, layer) => {
   <span class="smbc-map__item__header__block__title">Leases</span>
 </div>
 <div class="smbc-map__item__body">
-  <p>Description: ${feature.properties.description}</p>  
+  <p>Lease ID: ${feature.properties.lease_id}</p>
+  <p>Tenant: ${feature.properties.tenant}</p>
+  <p>Lease Type: ${feature.properties.lease_type}</p>
+  <p>Property Leased: ${feature.properties.property_leased}</p>
+  <p>Property Type: ${feature.properties.property_type}</p>   
 </div>
 </div>`
 

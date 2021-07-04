@@ -63,9 +63,9 @@ const revokedtpoStyle = {
 const adopted_highwaysStyle = {
     color: '#ce1256',
     weight: 1,
-    opacity: 0.25,
+    opacity: 1,
     fillColor: '#ce1256',
-    fillOpacity: 0.25
+    fillOpacity: 1
 }
 const Leasesstyle = {
     color: '#006400',

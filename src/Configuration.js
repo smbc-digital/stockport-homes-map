@@ -17,16 +17,6 @@ const Configuration = {
     DynamicData: 
     [
         {
-            key: 'Adopted Highways',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=con29:2_1a&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
-            layerOptions: {
-                style: adopted_highwaysStyle,
-                maxZoom: 14
-            },
-            displayOverlay: true,
-            visibleByDefault: true
-        },
-        {
             key: 'Council Owned Land',
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:council_owned_land&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
@@ -38,8 +28,18 @@ const Configuration = {
             visibleByDefault: true
         },
         {
+            key: 'Adopted Highways',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=con29:2_1a&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                style: adopted_highwaysStyle,
+                maxZoom: 14
+            },
+            displayOverlay: true,
+            visibleByDefault: true
+        },
+        {
             key: 'Leases',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:leases&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:leases_all&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
                 onEachFeature: Leases_Popup,
                 maxZoom: 14,
