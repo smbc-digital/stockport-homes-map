@@ -260,7 +260,85 @@ const planningappsPopup = (feature, layer) => {
   layer.bindPopup(content)
   }  
 
+  const SMBC_greenspace_Popup = (feature, layer) => {
   
+    const content = `<div class="smbc-map__item">
+    <div class="smbc-map__item__header__block">
+      <i class="fa fa-list smbc-map__item__header__block__icon" aria-hidden="true"></i>
+      <span class="smbc-map__item__header__block__title">SMBC Greenspace</span>
+    </div>
+    <div class="smbc-map__item__body">
+    <p>Site: ${feature.properties.site_name}</p>
+    <p>Contract Area: ${feature.properties.contract_area}</p>
+    <p>Class: ${feature.properties.class}</p>
+    <p>Typology: ${feature.properties.slc_typology}</p>
+    <p>Site Code: ${feature.properties.site_code}</p>
+    <p>Site ID: ${feature.properties.site_id}</p>
+    </div>
+  </div>`
+    
+    layer.bindPopup(content)
+    }  
+
+  const highways_greenspace_Popup = (feature, layer) => {
+  
+      const content = `<div class="smbc-map__item">
+      <div class="smbc-map__item__header__block">
+        <i class="fa fa-list smbc-map__item__header__block__icon" aria-hidden="true"></i>
+        <span class="smbc-map__item__header__block__title">Highways Greenspace</span>
+      </div>
+      <div class="smbc-map__item__body">
+      <p>Site: ${feature.properties.site_name}</p>
+      <p>Contract Area: ${feature.properties.contract_area}</p>
+      <p>Class: ${feature.properties.class}</p>
+      <p>Typology: ${feature.properties.slc_typology}</p>
+      <p>Site Code: ${feature.properties.site_code}</p>
+      <p>Site ID: ${feature.properties.site_id}</p>
+      </div>
+    </div>`
+      
+      layer.bindPopup(content)
+      } 
+      
+ const SHG_low_maintenance_Popup = (feature, layer) => {
+  
+        const content = `<div class="smbc-map__item">
+        <div class="smbc-map__item__header__block">
+          <i class="fa fa-list smbc-map__item__header__block__icon" aria-hidden="true"></i>
+          <span class="smbc-map__item__header__block__title">SHG Low Maintenance</span>
+        </div>
+        <div class="smbc-map__item__body">
+        <p>Name: ${feature.properties.name}</p>
+        <p>Details: ${feature.properties.details}</p>
+        <p>Size: ${feature.properties.size} m2</p>
+        <p>Work: ${feature.properties.work}</p>
+        <p>Team: ${feature.properties.team}</p>
+        <p>Area: ${feature.properties.area} m2</p>
+        <p>Map: ${feature.properties.map}</p>
+        <p>Folder: ${feature.properties.folderno}</p>
+        </div>
+      </div>`
+        
+        layer.bindPopup(content)
+        }  
+
+  const SHG_greenspace_Popup = (feature, layer) => {
+  
+          const content = `<div class="smbc-map__item">
+          <div class="smbc-map__item__header__block">
+            <i class="fa fa-list smbc-map__item__header__block__icon" aria-hidden="true"></i>
+            <span class="smbc-map__item__header__block__title">SHG Greenspace</span>
+          </div>
+          <div class="smbc-map__item__body">
+          <p>Name: ${feature.properties.name}</p>
+          <p>Code: ${feature.properties.code}</p>
+          <p>Area: ${feature.properties.site_area}</p>
+          <p>Size: ${feature.properties.area} m2</p>
+          </div>
+        </div>`
+          
+          layer.bindPopup(content)
+          }  
 
  export {
   prowPopup,
@@ -279,5 +357,9 @@ const planningappsPopup = (feature, layer) => {
   Historic_Parks_Gardens_Popup,
   planningappsPopup,
   section38Popup,
-  streetlightPopup
+  streetlightPopup,
+  SMBC_greenspace_Popup,
+  highways_greenspace_Popup,
+  SHG_low_maintenance_Popup,
+  SHG_greenspace_Popup
 }

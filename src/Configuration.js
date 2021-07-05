@@ -1,5 +1,5 @@
 import Leaflet from 'leaflet'
-import { prowPopup,tpoPopup,Land_Ownership_Popup, Leases_Popup, Assets_Popup, greenbeltPopup, aqmaPopup, Locally_listed_Popup, Statutory_listed_Popup, Conservation_area_Popup, Article4_1_direction_Popup, Article4_2_direction_Popup, Scheduled_monument_Popup, Historic_Parks_Gardens_Popup, planningappsPopup, section38Popup, streetlightPopup } from './Popups'
+import { prowPopup,tpoPopup,Land_Ownership_Popup, Leases_Popup, Assets_Popup, greenbeltPopup, aqmaPopup, Locally_listed_Popup, Statutory_listed_Popup, Conservation_area_Popup, Article4_1_direction_Popup, Article4_2_direction_Popup, Scheduled_monument_Popup, Historic_Parks_Gardens_Popup, planningappsPopup, section38Popup, streetlightPopup, SMBC_greenspace_Popup, highways_greenspace_Popup, SHG_low_maintenance_Popup, SHG_greenspace_Popup} from './Popups'
 import { prowStyle, tpoStyle, proposedtpoStyle, revokedtpoStyle, LandOwnershipstyle, adopted_highwaysStyle, Leasesstyle, greenbeltStyle, aqmaStyle, Locally_listed_style, Statutory_listed_style, Conservation_area_style, Article4_1_direction_style, Article4_2_direction_style, Scheduled_monument_style, Historic_parks_gardens_style, planningappsStyle, section38Style } from './Styles'
 
 const Configuration = {
@@ -16,6 +16,7 @@ const Configuration = {
     },
     DynamicData: 
     [
+        
         {
             key: 'Council Owned Land',
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:council_owned_land&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
@@ -23,16 +24,6 @@ const Configuration = {
                 onEachFeature: Land_Ownership_Popup,
                 maxZoom: 14,
                 style: LandOwnershipstyle
-            },
-            displayOverlay: true,
-            visibleByDefault: true
-        },
-        {
-            key: 'Adopted Highways',
-            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=con29:2_1a&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
-            layerOptions: {
-                style: adopted_highwaysStyle,
-                maxZoom: 14
             },
             displayOverlay: true,
             visibleByDefault: true
@@ -47,7 +38,61 @@ const Configuration = {
             },
             displayOverlay: true,
             visibleByDefault: true
-        },       
+        },   
+        {
+            key: 'Adopted Highways',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=con29:2_1a&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                style: adopted_highwaysStyle,
+                maxZoom: 14
+            },
+            displayOverlay: true,
+            visibleByDefault: true
+        },
+        {
+            key: 'SHG Greenspace',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=stockport_homes:shg_greenspace&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                onEachFeature: SHG_greenspace_Popup,
+                maxZoom: 14,
+                style: Leasesstyle
+            },
+            displayOverlay: true,
+            visibleByDefault: false
+        },  
+        {
+            key: 'SHG Low Maintenance',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=stockport_homes:shg_low_maintenance&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                onEachFeature: SHG_low_maintenance_Popup,
+                maxZoom: 14,
+                style: Leasesstyle
+            },
+            displayOverlay: true,
+            visibleByDefault: false
+        },
+        {
+            key: 'SMBC Greenspace',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=grounds_maintenance:smbc_greenspace&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                onEachFeature: SMBC_greenspace_Popup,
+                maxZoom: 14,
+                style: Leasesstyle
+            },
+            displayOverlay: true,
+            visibleByDefault: false
+        },
+        {
+            key: 'Highways Greenspace',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=grounds_maintenance:highways_greenspace&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                onEachFeature: highways_greenspace_Popup,
+                maxZoom: 14,
+                style: Leasesstyle
+            },
+            displayOverlay: true,
+            visibleByDefault: false
+        },    
         {
             key: 'Council Owned Buildings',
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=land_ownership:smbc_buildings&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
