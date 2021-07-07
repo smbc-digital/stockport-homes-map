@@ -1,11 +1,11 @@
 import Leaflet from 'leaflet'
-import { prowPopup,tpoPopup,Land_Ownership_Popup, Leases_Popup, Assets_Popup, greenbeltPopup, aqmaPopup, Locally_listed_Popup, Statutory_listed_Popup, Conservation_area_Popup, Article4_1_direction_Popup, Article4_2_direction_Popup, Scheduled_monument_Popup, Historic_Parks_Gardens_Popup, planningappsPopup, section38Popup, streetlightPopup, SMBC_greenspace_Popup, highways_greenspace_Popup, SHG_low_maintenance_Popup, SHG_greenspace_Popup} from './Popups'
-import { prowStyle, tpoStyle, proposedtpoStyle, revokedtpoStyle, LandOwnershipstyle, adopted_highwaysStyle, Leasesstyle, greenbeltStyle, aqmaStyle, Locally_listed_style, Statutory_listed_style, Conservation_area_style, Article4_1_direction_style, Article4_2_direction_style, Scheduled_monument_style, Historic_parks_gardens_style, planningappsStyle, section38Style } from './Styles'
+import { prowPopup,tpoPopup,Land_Ownership_Popup, Leases_Popup, Assets_Popup, greenbeltPopup, aqmaPopup, Locally_listed_Popup, Statutory_listed_Popup, Conservation_area_Popup, Article4_1_direction_Popup, Article4_2_direction_Popup, Scheduled_monument_Popup, Historic_Parks_Gardens_Popup, planningappsPopup, section38Popup, streetlightPopup, SMBC_greenspace_Popup, highways_greenspace_Popup, SHG_low_maintenance_Popup, SHG_greenspace_Popup, SHG_gm_polygons_Popup} from './Popups'
+import { prowStyle, tpoStyle, proposedtpoStyle, revokedtpoStyle, LandOwnershipstyle, adopted_highwaysStyle, Leasesstyle, greenbeltStyle, aqmaStyle, Locally_listed_style, Statutory_listed_style, Conservation_area_style, Article4_1_direction_style, Article4_2_direction_style, Scheduled_monument_style, Historic_parks_gardens_style, planningappsStyle, section38Style, SMBC_greenspace_style, highways_greenspace_style, SHG_low_maintenance_style, SHG_greenspace_style, SHG_gm_polygons_style } from './Styles'
 
 const Configuration = {
     Map: {
-        StartingLatLng: [53.39205825732247, -2.1383008755576998],
-        StartingZoom: 17,
+        StartingLatLng: [53.43028609087102,-2.1386960765471517],
+        StartingZoom: 18,
         FullscreenControl: true,
         DisplayLayerControls: true,
         DisplayGrayScale: true,
@@ -50,12 +50,23 @@ const Configuration = {
             visibleByDefault: true
         },
         {
+            key: 'SHG GM Polygons',
+            url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=stockport_homes:shg_gm_polygons&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
+            layerOptions: {
+                onEachFeature: SHG_gm_polygons_Popup,
+                maxZoom: 14,
+                style: SHG_gm_polygons_style
+            },
+            displayOverlay: true,
+            visibleByDefault: false
+        },  
+        {
             key: 'SHG Greenspace',
             url: 'https://spatial.stockport.gov.uk/geoserver/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=stockport_homes:shg_greenspace&outputFormat=application/json&bbox={0},EPSG:4326&srsName=EPSG:4326',
             layerOptions: {
                 onEachFeature: SHG_greenspace_Popup,
                 maxZoom: 14,
-                style: Leasesstyle
+                style: SHG_greenspace_style
             },
             displayOverlay: true,
             visibleByDefault: false
@@ -66,7 +77,7 @@ const Configuration = {
             layerOptions: {
                 onEachFeature: SHG_low_maintenance_Popup,
                 maxZoom: 14,
-                style: Leasesstyle
+                style: SHG_low_maintenance_style
             },
             displayOverlay: true,
             visibleByDefault: false
@@ -77,7 +88,7 @@ const Configuration = {
             layerOptions: {
                 onEachFeature: SMBC_greenspace_Popup,
                 maxZoom: 14,
-                style: Leasesstyle
+                style: SMBC_greenspace_style
             },
             displayOverlay: true,
             visibleByDefault: false
@@ -88,7 +99,7 @@ const Configuration = {
             layerOptions: {
                 onEachFeature: highways_greenspace_Popup,
                 maxZoom: 14,
-                style: Leasesstyle
+                style: highways_greenspace_style
             },
             displayOverlay: true,
             visibleByDefault: false

@@ -158,6 +158,41 @@ const section38Style = {
     fillColor: '#fed976',
     fillOpacity: 0.25,
 }
+const SMBC_greenspace_style = {
+    color: '#0492C2',
+    weight: 4,
+    opacity: 1,
+    fillColor: '#006400',
+    fillOpacity: 0
+}
+const highways_greenspace_style = {
+    color: '#808080',
+    weight: 4,
+    opacity: 1,
+    fillColor: '#006400',
+    fillOpacity: 0
+}
+const SHG_low_maintenance_style = {
+    color: '#000000',
+    weight: 4,
+    opacity: 1,
+    fillColor: '#006400',
+    fillOpacity: 0
+}
+const SHG_greenspace_style = {
+    color: '#000000',
+    weight: 4,
+    opacity: 1,
+    fillColor: '#006400',
+    fillOpacity: 0
+}
+const SHG_gm_polygons_style = {
+    color: '#00FF00',
+    weight: 1,
+    opacity: 1,
+    fillColor: '#00FF00',
+    fillOpacity: 0.8
+}
 
 export {
 tpoStyle,
@@ -178,5 +213,10 @@ Article4_2_direction_style,
 Scheduled_monument_style,
 Historic_parks_gardens_style,
 planningappsStyle,
-section38Style
+section38Style,
+SMBC_greenspace_style,
+highways_greenspace_style,
+SHG_low_maintenance_style,
+SHG_greenspace_style,
+SHG_gm_polygons_style
 }

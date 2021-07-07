@@ -340,6 +340,29 @@ const planningappsPopup = (feature, layer) => {
           layer.bindPopup(content)
           }  
 
+const SHG_gm_polygons_Popup = (feature, layer) => {
+  
+          const content = `<div class="smbc-map__item">
+          <div class="smbc-map__item__header__block">
+            <i class="fa fa-list smbc-map__item__header__block__icon" aria-hidden="true"></i>
+            <span class="smbc-map__item__header__block__title">SHG Greenspace</span>
+          </div>
+          <div class="smbc-map__item__body">
+          <p>Location: ${feature.properties.location}</p>
+          <p>Info: ${feature.properties.local_info}</p>
+          <p>Clippings: ${feature.properties.clippings}</p>
+          <p>Size: ${feature.properties.size} m2</p>
+          <p>Amenity Level: ${feature.properties.amenity_level}</p>
+          <p>Sheet: ${feature.properties.sheet_name}</p>
+          <p>Site: ${feature.properties.site_name}</p>
+          <p>Ref: ${feature.properties.site_ref}</p>
+          <p>Comments: ${feature.properties.comments}</p>
+          </div>
+        </div>`
+          
+          layer.bindPopup(content)
+          }  
+
  export {
   prowPopup,
   tpoPopup,
@@ -361,5 +384,6 @@ const planningappsPopup = (feature, layer) => {
   SMBC_greenspace_Popup,
   highways_greenspace_Popup,
   SHG_low_maintenance_Popup,
-  SHG_greenspace_Popup
+  SHG_greenspace_Popup,
+  SHG_gm_polygons_Popup
 }
