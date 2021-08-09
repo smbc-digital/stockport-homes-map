@@ -65,6 +65,27 @@ const prowPopup = (feature, layer) => {
 
   layer.bindPopup(content)
 }
+
+const Leases_historic_Popup = (feature, layer) => {
+  const content = `<div class="smbc-map__item">
+<div class="smbc-map__item__header__block">
+  <i class="fa fa-file-text smbc-map__item__header__block__icon" aria-hidden="true"></i>
+  <span class="smbc-map__item__header__block__title">Historic Leases</span>
+</div>
+<div class="smbc-map__item__body">
+  <p>Lease ID: ${feature.properties.lease_id}</p>
+  <p>Lease Status: ${feature.properties.status}</p>
+  <p>Lease End Date: ${feature.properties.end_date}</p>
+  <p>Tenant: ${feature.properties.tenant}</p>
+  <p>Lease Type: ${feature.properties.lease_type}</p>
+  <p>Property Leased: ${feature.properties.property_leased}</p>
+  <p>Property Type: ${feature.properties.property_type}</p>   
+</div>
+</div>`
+
+  layer.bindPopup(content)
+}
+
 const Assets_Popup = (feature, layer) => {
   const content = `<div class="smbc-map__item">
 <div class="smbc-map__item__header__block">
@@ -368,6 +389,7 @@ const SHG_gm_polygons_Popup = (feature, layer) => {
   tpoPopup,
   Land_Ownership_Popup,
   Leases_Popup,
+  Leases_historic_Popup,
   Assets_Popup,
   greenbeltPopup,
   aqmaPopup,
